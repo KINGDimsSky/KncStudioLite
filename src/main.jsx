@@ -6,6 +6,9 @@ import NotFound from './pages/404.jsx';
 import Home from './pages/home.jsx';
 import Navbar from './components/Navbar/index.jsx';
 import Footer from './components/Footer.jsx';
+import Products from './pages/products.jsx';
+import Product from './pages/product.jsx';
+import { CartProvider } from './hooks/useCart.jsx';
 
 const Layout = () => (
   <>
@@ -18,12 +21,24 @@ const Layout = () => (
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Layout />,
+    element: (
+      <CartProvider>
+        <Layout />
+      </CartProvider>
+    ),
     errorElement: <NotFound />,
     children: [
       {
         path: '/',
         element: <Home />,
+      },
+      {
+        path: '/products',
+        element: <Products />,
+      },
+      {
+        path: '/products/:id',
+        element: <Product />,
       },
     ],
   },
