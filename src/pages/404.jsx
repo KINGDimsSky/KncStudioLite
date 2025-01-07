@@ -1,6 +1,8 @@
 import { Chrome, Facebook, Github, Twitter } from 'lucide-react'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 
 const IconWrapper = ({Icon, onClick}) => {
   return(
@@ -25,6 +27,8 @@ const NotFound = () => {
     window.location.href = url;
   }
   return (
+    <>
+    <Navbar/>
     <div className="flex flex-col min-h-screen items-center justify-center bg-black">
       <div className="text-9xl mb-6 tracking-tight text-purple-500">404</div>
       <div className="text-4xl tracking-wider font-light mb-8 text-white">OOPS! NOTHING WAS FOUND</div>
@@ -36,6 +40,8 @@ const NotFound = () => {
         ))}
       </div>
     </div>
+    <Footer/>
+    </>
   )
 }
 
