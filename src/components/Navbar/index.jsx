@@ -29,12 +29,12 @@ const Navbar = () => {
             </NavLink>
           </div>
           <div className="border-r border-white/40">
-            <NavLink className="m-9  hover:text-violet-600 transition-colors" to="/sign-up" end>
+            <NavLink className="m-9  hover:text-violet-600 transition-colors" to="/auth/sign-up" end>
               Create Account
             </NavLink>
           </div>
           <div className="border-r border-white/40">
-            <NavLink className="m-9 bg-violet-600 py-2 px-4 hover:bg-violet-500 rounded-sm transition-colors" to="/sign-in" end>
+            <NavLink className="m-9 bg-violet-600 py-2 px-4 hover:bg-violet-500 rounded-sm transition-colors" to="/auth/sign-in" end>
               Sign In
             </NavLink>
           </div>

@@ -79,7 +79,7 @@ const Product = () => {
               <div className="mt-6 text-center">
                 <div className="group inline-flex text-sm font-medium">
                   <Shield aria-hidden="true" className="mr-2 h-5 w-5 flex-shrink-0 text-muted-foreground" />
-                  <span className="text-muted-foreground ">30 Day Return Guarantee</span>
+                  <span className="text-muted-foreground text-white">30 Day Return Guarantee</span>
                 </div>
               </div>
             </div>
