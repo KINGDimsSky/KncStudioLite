@@ -1,2 +1,4 @@
-//iki ape tak gae
-//export CN Classname gae maxwidthwrapper
+export function cn(...inputs) {
+    return inputs.filter(Boolean).join(" ");
+  }
+

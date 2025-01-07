@@ -1,9 +1,12 @@
 import React from 'react'
+import MaxWidthWrapper from '../components/MaxWidthWrapper'
 
 const Home = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-black">
-        <h2 className='text-white text-6xl'>SYAHRUL ANJING!</h2>
+    <div className="min-h-screen bg-black">
+      <MaxWidthWrapper>
+        
+      </MaxWidthWrapper>
     </div>
   )
 }
