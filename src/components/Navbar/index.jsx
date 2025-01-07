@@ -13,7 +13,7 @@ const Navbar = () => {
         <div className="flex gap-12 items-center">
           <div className="flex gap-4 items-center ">
             <img onClick={() => (window.location.href = '/')} className=" w-10 md:w-12 cursor-pointer" src="/IconKnc.png" alt="KncStudio" />
-            <h3 className="text-white font-bold text-2xl">KNCStudio</h3>
+           <NavLink> <h3 className="text-white font-bold text-2xl">KNCStudio</h3></NavLink>
           </div>
         </div>
 
