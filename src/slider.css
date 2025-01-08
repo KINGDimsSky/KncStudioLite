@@ -1,0 +1,39 @@
+.slider {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    margin-top: 2rem;
+  }
+  
+  .list {
+    display: flex;
+    gap: 2rem;
+    animation: scroll 10s linear infinite;
+  }
+  
+  .item {
+    flex-shrink: 0;
+    width: 40%;
+    overflow: hidden; /* Penting untuk memotong bagian yang melewati container */
+  }
+  
+  .item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease-in-out; /* Tambahkan transisi halus */
+  }
+  
+  .item:hover img {
+    transform: scale(1.2); /* Zoom gambar menjadi 1.2 kali lebih besar */
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
