@@ -11,6 +11,7 @@ import { CartProvider } from './hooks/useCart.jsx';
 import NotFound from './pages/404.jsx';
 import SignIn from './pages/signin.jsx';
 import SignUp from './pages/signup.jsx';
+import AboutUs from './pages/aboutus.jsx';
 
 const Layout = () => (
   <>
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
       {
         path: "/sign-in",
         element: <SignIn/>
+      },
+      {
+        path: "/about-us",
+        element: <AboutUs/>
       }
     ],
   },
