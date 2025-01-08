@@ -12,6 +12,7 @@ import NotFound from './pages/404.jsx';
 import SignIn from './pages/signin.jsx';
 import SignUp from './pages/signup.jsx';
 import AboutUs from './pages/aboutus.jsx';
+import Cart from './pages/cart.jsx';
 
 const Layout = () => (
   <>
@@ -20,10 +21,6 @@ const Layout = () => (
     <Footer />
   </>
 );
-
-const NoLayout = () => {
-  return <Outlet/>
-}
 
 const router = createBrowserRouter([
   {
@@ -48,36 +45,30 @@ const router = createBrowserRouter([
       },
       {
         path: '*',
-        element: <NotFound/>
+        element: <NotFound />,
       },
       {
-        path: "/sign-in",
-        element: <SignIn/>
+        path: '/sign-in',
+        element: <SignIn />,
       },
       {
-        path: "/about-us",
-        element: <AboutUs/>
-      }
+        path: '/about-us',
+        element: <AboutUs />,
+      },
+      {
+        path: '/auth/sign-in',
+        element: <SignIn />,
+      },
+      {
+        path: '/auth/sign-up',
+        element: <SignUp />,
+      },
+      {
+        path: '/cart',
+        element: <Cart />,
+      },
     ],
   },
-  {
-    path: "/auth",
-    element: (
-      <CartProvider>
-        <NoLayout/>
-      </CartProvider>
-    ),
-    children: [
-      {
-        path: "/auth/sign-in",
-        element: <SignIn/>
-      },
-      {
-        path: "/auth/sign-up",
-        element: <SignUp/>
-      }
-    ]
-  }
 ]);
 
 createRoot(document.getElementById('root')).render(

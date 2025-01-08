@@ -15,13 +15,16 @@ export const CartProvider = ({ children }) => {
   }, [cartItems]);
 
   const addItem = (product) => {
-    setCartItems((prevItems) => {
-      const newCart = [...prevItems, product];
-      return newCart;
-    });
+    setCartItems((prevItems) => [...prevItems, product]);
+  };
+
+  const removeItem = (index) => {
+    setCartItems((prevItems) => prevItems.filter((_, i) => i !== index));
   };
 
   const cartCount = cartItems.length;
 
-  return <CartContext.Provider value={{ addItem, cartCount }}>{children}</CartContext.Provider>;
+  const totalAmount = cartItems.reduce((sum, item) => sum + item.price, 0);
+
+  return <CartContext.Provider value={{ addItem, removeItem, cartItems, cartCount, totalAmount }}>{children}</CartContext.Provider>;
 };
