@@ -4,11 +4,16 @@ import InputForm from '../InputForm'
 import Button from '../Button'
 import { useNavigate } from 'react-router-dom'
 
-const AuthLayout = ({title, children}) => {
+const AuthLayout = ({title}) => {
   const navigate = useNavigate()
 
   const buttonHandler = () => {
     navigate(title == "SignIn" ? "/auth/sign-Up" : "/auth/sign-in")
+  }
+
+  const confirmHandler = (event) => {
+    event.preventDefault()
+    navigate(title == "SignIn" ? "/" : "/auth/sign-in")
   }
 
   return (
@@ -18,19 +23,19 @@ const AuthLayout = ({title, children}) => {
           <h2 className='text-xl font-semibold'>{title == "SignUp" ? "Sign Up" : "Sign In"}</h2>
        </div>
        <p className='text-xs text-gray-700 mt-1 mb-3'>Create New, Enjoy Your Experience!</p>
-       <form action="">
+       <form onSubmit={confirmHandler}>
         <InputForm htmlFor="username" type="text" label="Username" placeholder="Username" /> 
         <InputForm htmlFor="password" type="password" label="Password" placeholder="Password" /> 
         {title == 'SignUp' && (
           <InputForm htmlFor="passwordConfirm" type="password" label="Confirm Password" placeholder="Password"/> 
         )}
-        <Button  className="mt-3 w-full py-2 bg-purple-500 text-white">
+        <Button type="submit" className="mt-3 w-full py-2 bg-purple-500 text-white">
           Continue
         </Button>
-        <div className="garisMoment mb-6 gap-2 flex items-center justify-center">
-            <div className="garis w-full border-y border-gray-300"></div>
+        <div className="mb-6 gap-2 flex items-center justify-center">
+            <div className="w-full border-y border-gray-300"></div>
             <h2 className='text-gray-400 text-sm'>OR</h2>
-            <div className="garis w-full border-y border-gray-300"></div>
+            <div className="w-full border-y border-gray-300"></div>
            </div>
        </form>
         <Button Logo={<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 48 48">
